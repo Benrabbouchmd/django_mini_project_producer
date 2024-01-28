@@ -16,6 +16,14 @@ class RiddleViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['post'], permission_classes=[HasAPIKey])
     def riddle_me_this(self, request, pk=None):
+        """
+        Webhook receiver view that accepts a POST request
+        from the consumer and updates the message model with the result.
+
+        :param request: HttpRequest server
+        :param pk: The primary key of the riddle
+        :return: HttpResponse
+        """
         riddle = self.get_object()
         data = RiddleSerializer(riddle).data
         data.update(request.data)
