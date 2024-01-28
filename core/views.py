@@ -17,7 +17,9 @@ class RiddleViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['post'], permission_classes=[HasAPIKey])
     def riddle_me_this(self, request, pk=None):
         riddle = self.get_object()
-        serializer = RiddleSerializer(data=request.data)
+        data = RiddleSerializer(riddle).data
+        data.update(request.data)
+        serializer = RiddleSerializer(data=data)
 
         if serializer.is_valid():
             riddle.chosen_answer = serializer.validated_data['chosen_answer']

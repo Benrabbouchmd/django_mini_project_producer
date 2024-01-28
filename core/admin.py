@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from core.models import Riddle
+
+
+@admin.register(Riddle)
+class RiddleAdmin(admin.ModelAdmin):
+    pass

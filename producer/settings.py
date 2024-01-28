@@ -140,3 +140,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ]
 }
+
+CONSUMER_API_KEY = config('CONSUMER_API_KEY')
