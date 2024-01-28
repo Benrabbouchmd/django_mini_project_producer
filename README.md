@@ -23,10 +23,14 @@ source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 
 `pip install -r requirements.txt`
 
+Create a .env file using the .env.example template
+
 4. Run migrations:
 
 `python manage.py migrate
 `
+Creating and Managing API Keys
+https://florimondmanca.github.io/djangorestframework-api-key/guide/#creating-and-managing-api-keys
 
 5. Running the Server
 `python manage.py runserver`
