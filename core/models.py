@@ -10,3 +10,4 @@ class Riddle(models.Model):
     answer_choice_d = models.TextField()
     chosen_answer = models.TextField(blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
+    task_id = models.CharField(max_length=36, blank=True)
